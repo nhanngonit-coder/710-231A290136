@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Contact</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+.container {
+  max-width: 500px;
+  margin: auto;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0;
+}
+</style>
+
+</head>
+
+<body>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="baitap01.html">Bài 1</a>
+  <a href="baitap02.html">Bài 2</a>
+  <a href="baitap03.html">Bài 3</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<div class="container">
+
+<h1>Liên hệ</h1>
+
+<p><b>Sinh viên:</b> Nhan Ngọc Ngôn</p>
+<p><b>MSSV:</b> 231A290136</p>
+<p><b>Email:</b> nhanngon.it@gmail.com</p>
+
+<form id="contactForm">
+  <input type="text" id="name" placeholder="Tên của bạn">
+  <input type="email" id="email" placeholder="Email">
+  <textarea id="message" placeholder="Nội dung"></textarea>
+  <button type="submit">Gửi</button>
+</form>
+
+<p id="msg"></p>
+
+</div>
+
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const message = document.getElementById("message").value.trim();
+
+  if(name === "" || email === "" || message === ""){
+    return alert("Vui lòng nhập đầy đủ thông tin!");
+  }
+
+  document.getElementById("msg").innerText = "Gửi thành công!";
+});
+</script>
+
+</body>
+</html>
