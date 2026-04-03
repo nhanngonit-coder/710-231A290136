@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Bài 1</title>
+
+<style>
+body { font-family: Arial; padding: 20px; }
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.product {
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: calc(33% - 10px);
+}
+
+@media(max-width: 600px){
+  .product { width: 100%; }
+}
+</style>
+
+</head>
+
+<body>
+
+<h2>Danh sách sản phẩm</h2>
+
+<input type="text" id="search" placeholder="Tìm sản phẩm...">
+<p id="error" style="color:red"></p>
+
+<div class="products" id="list"></div>
+
+<script>
+const products = [
+  {name: "iPhone"},
+  {name: "Samsung"},
+  {name: "Laptop"},
+  {name: "Tai nghe"},
+  {name: "Chuột"}
+];
+
+const list = document.getElementById("list");
+
+function render(data){
+  list.innerHTML = "";
+  data.forEach(p => {
+    list.innerHTML += `<div class="product">${p.name}</div>`;
+  });
+}
+
+render(products);
+
+document.getElementById("search").addEventListener("input", function(){
+  const keyword = this.value.toLowerCase().trim();
+
+  const result = products.filter(p =>
+    p.name.toLowerCase().includes(keyword)
+  );
+
+  if(result.length === 0){
+    document.getElementById("error").innerText = "Không tìm thấy!";
+    list.innerHTML = "";
+  } else {
+    document.getElementById("error").innerText = "";
+    render(result);
+  }
+});
+</script>
+
+</body>
+</html>
