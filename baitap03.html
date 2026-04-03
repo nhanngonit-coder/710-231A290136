@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Bài 3</title>
+
+<style>
+body { font-family: Arial; padding: 20px; }
+
+#timer {
+  font-size: 40px;
+}
+
+.warning {
+  color: red;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+</style>
+
+</head>
+
+<body>
+
+<h2>Countdown 10 phút</h2>
+
+<div id="timer">10:00</div>
+
+<script>
+let time = 600;
+
+const timer = document.getElementById("timer");
+
+const interval = setInterval(() => {
+
+  let m = Math.floor(time / 60);
+  let s = time % 60;
+
+  timer.innerText =
+    String(m).padStart(2,'0') + ":" +
+    String(s).padStart(2,'0');
+
+  if(time <= 60){
+    timer.classList.add("warning");
+  }
+
+  if(time <= 0){
+    clearInterval(interval);
+    alert("Hết giờ!");
+  }
+
+  time--;
+
+}, 1000);
+</script>
+
+</body>
+</html>
