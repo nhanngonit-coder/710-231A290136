@@ -1,44 +1,187 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="vi">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title>Bài tập 21</title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2299">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Arial; color: #181818; -webkit-text-stroke: #181818; background-color: #ffffff}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Arial; color: #181818; -webkit-text-stroke: #181818; background-color: #ffffff; min-height: 16.0px}
-    span.s1 {font-kerning: none}
-  </style>
+<meta charset="UTF-8">
+<title>Lý thuyết</title>
+
+<style>
+body {
+  font-family: Arial;
+  line-height: 1.6;
+  padding: 20px;
+}
+h1, h2 {
+  color: #333;
+}
+code {
+  background: #f4f4f4;
+  padding: 3px 6px;
+}
+pre {
+  background: #f4f4f4;
+  padding: 10px;
+  overflow-x: auto;
+}
+</style>
+
 </head>
+
 <body>
-<p class="p1"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
-<p class="p1"><span class="s1">&lt;html lang="vi"&gt;</span></p>
-<p class="p1"><span class="s1">&lt;head&gt;</span></p>
-<p class="p1"><span class="s1">&lt;meta charset="UTF-8"&gt;</span></p>
-<p class="p1"><span class="s1">&lt;title&gt;Lý thuyết&lt;/title&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/head&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">&lt;body&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">&lt;h1&gt;PHẦN 1: LÝ THUYẾT&lt;/h1&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">&lt;h2&gt;Câu 1&lt;/h2&gt;</span></p>
-<p class="p1"><span class="s1">&lt;p&gt;Phân biệt position absolute và relative...&lt;/p&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">&lt;h2&gt;Câu 2&lt;/h2&gt;</span></p>
-<p class="p1"><span class="s1">&lt;p&gt;Domain, hosting, DNS...&lt;/p&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">&lt;h2&gt;Câu 3&lt;/h2&gt;</span></p>
-<p class="p1"><span class="s1">&lt;p&gt;let, const, var...&lt;/p&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">&lt;h2&gt;Câu 4&lt;/h2&gt;</span></p>
-<p class="p1"><span class="s1">&lt;p&gt;Event Delegation...&lt;/p&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">&lt;a href="index.html"&gt;← Quay lại&lt;/a&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">&lt;/body&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/html&gt;</span></p>
+
+<h1>PHẦN 1: LÝ THUYẾT</h1>
+
+<!-- CÂU 1 -->
+<h2>Câu 1: position: absolute vs relative</h2>
+
+<h3>Khác biệt chính:</h3>
+<ul>
+<li><b>relative:</b> định vị so với chính nó, vẫn chiếm chỗ</li>
+<li><b>absolute:</b> định vị theo phần tử cha gần nhất có position, không chiếm chỗ</li>
+</ul>
+
+<h3>Ví dụ:</h3>
+<pre>
+&lt;div class="parent"&gt;
+  &lt;div class="box1"&gt;Relative&lt;/div&gt;
+  &lt;div class="box2"&gt;Absolute&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;style&gt;
+.parent {
+  position: relative;
+}
+.box1 {
+  position: relative;
+  top: 20px;
+}
+.box2 {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+&lt;/style&gt;
+</pre>
+
+<h3>Ứng dụng:</h3>
+<ul>
+<li>relative: chỉnh vị trí nhẹ</li>
+<li>absolute: popup, dropdown</li>
+</ul>
+
+<h3>Responsive:</h3>
+<ul>
+<li>Dùng sai absolute → vỡ layout mobile</li>
+<li>Kết hợp flexbox, media query</li>
+</ul>
+
+<hr>
+
+<!-- CÂU 2 -->
+<h2>Câu 2: Domain, Hosting, DNS</h2>
+
+<h3>Quy trình:</h3>
+<ol>
+<li>Mua domain</li>
+<li>Thuê hosting</li>
+<li>Upload code</li>
+<li>Trỏ DNS</li>
+</ol>
+
+<h3>DNS:</h3>
+<p>Chuyển tên miền thành IP server</p>
+
+<pre>
+example.com → 123.45.67.89
+</pre>
+
+<h3>Công cụ:</h3>
+<ul>
+<li>GitHub Pages</li>
+<li>Netlify</li>
+</ul>
+
+<h3>Bảo mật:</h3>
+<ul>
+<li>Không HTTPS → dễ hack</li>
+<li>Lộ API key</li>
+<li>Sai DNS → mất domain</li>
+</ul>
+
+<hr>
+
+<!-- CÂU 3 -->
+<h2>Câu 3: let, const, var</h2>
+
+<h3>So sánh:</h3>
+<ul>
+<li>var: function scope</li>
+<li>let: block scope</li>
+<li>const: block scope, không đổi</li>
+</ul>
+
+<h3>Ví dụ lỗi:</h3>
+<pre>
+console.log(a); // undefined
+var a = 5;
+
+console.log(b); // lỗi
+let b = 10;
+</pre>
+
+<h3>Lỗi thường gặp:</h3>
+<pre>
+for (var i = 0; i < 3; i++) {
+  setTimeout(() => console.log(i), 1000);
+}
+// 3 3 3
+</pre>
+
+<h3>Fix:</h3>
+<pre>
+for (let i = 0; i < 3; i++) {
+  setTimeout(() => console.log(i), 1000);
+}
+</pre>
+
+<h3>Debug:</h3>
+<ul>
+<li>F12 → Console</li>
+<li>console.log()</li>
+<li>Breakpoint</li>
+</ul>
+
+<hr>
+
+<!-- CÂU 4 -->
+<h2>Câu 4: Event Delegation</h2>
+
+<h3>Khái niệm:</h3>
+<p>Gắn event cho phần tử cha để xử lý cho phần tử con</p>
+
+<h3>Ví dụ:</h3>
+<pre>
+&lt;ul id="list"&gt;
+  &lt;li&gt;Item 1&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script&gt;
+document.getElementById("list").addEventListener("click", function(e) {
+  if (e.target.tagName === "LI") {
+    alert(e.target.innerText);
+  }
+});
+&lt;/script&gt;
+</pre>
+
+<h3>Lợi ích:</h3>
+<ul>
+<li>Tối ưu hiệu suất</li>
+<li>Code gọn</li>
+<li>Hỗ trợ phần tử động</li>
+</ul>
+
+<br>
+<a href="index.html">← Quay lại</a>
+
 </body>
 </html>
